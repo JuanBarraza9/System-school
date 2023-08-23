@@ -1,0 +1,18 @@
+{
+    "name": "juan/system-school",
+    "description": "Proyecto system school",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./" ,
+            "Controllers\\" : "./app/controllers",
+            "Models\\" : "./app/models"
+        }
+    },
+    "authors": [
+        {
+            "name": "JuanBarraza9",
+            "email": "juanagustin.barraza09@gmail.com"
+        }
+    ],
+    "require": {}
+}

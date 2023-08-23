@@ -1,0 +1,54 @@
+@use './../base/mixins' as m;
+
+.formulario {
+
+    background-color: #e2e8f0;
+    padding: 2rem;
+    border-radius: 2rem;
+    max-width: 45rem;
+    margin: 0 auto;
+
+    .campo {
+       font-size: 1.4rem;
+       display: block;
+       padding: 1rem; 
+       width: 100%;
+       label {
+         display: flex;
+         justify-content: flex-start;
+         padding-bottom: .4rem;
+       }
+       input {
+         padding: 1rem;
+         width: 100%;
+         border: none;
+         border-radius: 1rem;
+       }
+    }
+
+    .boton {
+        margin-top: 1.6rem;
+        width: 15rem;
+        padding: .6rem;
+        border-radius: 1rem;
+        background-color: #7dd3fc;
+        border: black 1px;
+        transition: all ease 300ms;
+        color: #475569;
+        &:hover {
+            cursor: pointer;
+            background-color: #0369a1;
+            color: white;
+        }
+    }
+}
+
+.acciones {
+    margin-top: 3rem;
+    a {
+        padding-bottom: 3rem;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        color: #475569;
+    }
+}

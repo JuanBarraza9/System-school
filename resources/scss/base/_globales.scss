@@ -1,0 +1,46 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100vh;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    background-color: #f8fafc;
+}
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contenedor-sm {
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+}

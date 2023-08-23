@@ -1,0 +1,13 @@
+<?php
+require_once __DIR__ . './../vendor/autoload.php';
+require_once __DIR__ . '/../app/app.php';
+
+use MVC\Router;
+use Controllers\LoginController;
+
+
+$router = new Router();
+
+$router->get('/', [LoginController::class, 'login']);
+
+$router->checkRoutes();

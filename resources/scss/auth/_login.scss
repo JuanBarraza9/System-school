@@ -1,0 +1,79 @@
+@use './../base/mixins' as m;
+
+.login {
+
+
+    .background-login {
+        position: relative;
+        background-image: url('./../../build/img/student-849822_1280.webp');
+        background-size: cover;
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        // Agregar una capa de oscurecimiento
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    
+        .logo-container {
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            picture {
+                display: block;
+                width: 100%;
+                max-width: 35rem;
+    
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    
+
+    .content-login {
+        text-align: center;
+        text-transform: uppercase;
+        h1 {
+            text-transform: uppercase;
+            color: brown;
+        }
+        .instituto {
+            line-height: 1.5;
+            font-size: 2rem;
+        }
+    }
+
+    @include m.tablet {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .background-login {
+            width: 50%;
+            min-height: 100vh;
+            height: 100%;
+        }
+    
+
+        .content-login {
+            padding: 4rem;
+        }
+
+
+    }
+
+}
