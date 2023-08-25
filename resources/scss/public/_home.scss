@@ -1,0 +1,66 @@
+@use './../base/variables' as v;
+@use './../base/mixins' as m;
+
+
+section {
+    .banner {
+        position: relative;
+        video {
+            width: 100%;
+        }
+
+        .content-banner {
+            color: v.$white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h1 {
+                margin: 1rem 0;
+            }
+            p {
+                font-weight: 600;
+                margin: 0;
+            }
+
+            @include m.tablet {
+                h1 {
+                    font-size: 6rem;
+                }
+                p {
+                    font-size: 2.5rem;
+                    margin: 0;
+                }
+            }
+
+            @include m.desktop {
+                h1 {
+                    font-size: 9rem;
+                }
+                p {
+                    
+                    font-size: 3rem;
+                }
+            }
+
+        }
+
+    }
+}
+
+main {
+
+    .entries {
+        h3 {
+            margin-top: 5rem;
+
+            @include m.tablet {
+                font-size: 3rem;
+            }
+
+            @include m.desktop {
+                font-size: 4rem;
+            }
+        }
+    }
+}

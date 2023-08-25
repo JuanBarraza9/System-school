@@ -1,0 +1,41 @@
+@use '../../base/variables' as v;
+
+.header {
+    background-color: v.$black;
+    padding: 1rem;
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .img-ifts {
+            img {
+                max-width: 4rem;
+                max-height: 4rem;
+            }
+        }
+        .navigation-list {
+            display: flex;
+            gap: 2rem;
+            li {
+                
+                text-transform: uppercase;
+                text-decoration: none;
+                list-style: none;
+                a {
+                    
+                    color: v.$white;
+                }
+                .navigation-child {
+                    li {
+                        display: none;
+                        a {
+                            color: v.$white;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
