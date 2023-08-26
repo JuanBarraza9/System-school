@@ -1,34 +1,100 @@
 <header>
-    <div class="header">
-      <nav class="navigation">
-        <div class="img-ifts">
-            <img src="build/img/ifts11.jpeg" alt="ifts11">
-        </div>
-        <ul class="navigation-list">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Instituto</a>
-                <ul class="navigation-child">
-                    <li><a href="#">¿Quienes Somos?</a> </li>
-                    <li><a href="#">Docentes</a></li>
-                    <li><a href="#">Agenda</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Carreras</a>
-                <ul class="navigation-child">
-                    <li><a href="#">Desarrollo de Software</a></li>
-                    <li><a href="#">Analisis de Sistemas</a></li>
-                    <li><a href="#">Ciencia de datos e Inteligencia Artificial</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Estudiantes</a>
-                 <ul class="navigation-child">
-                    <li><a href="#">Aula Virtual</a></li>
-                    <li><a href="#">Horarios</a></li>
-                    <li><a href="#">Becas</a></li>
-                </ul>
-           </li>
-        </ul>
-      </nav>
 
-    </div>
+
+<nav class="nav">
+
+<div class="nav__container">
+
+    <a href="/" class="logo">
+        <img src="/build/img/ifts11.webp" class="nav__icon">
+    </a>
+
+    <a href="javascript:void(0)" class="nav__menu" id="openMenu">
+        <img src="/build/svg/menu.svg" class="nav__icon">
+    </a>
+    
+    <a href="javascript:void(0)" class="nav__menu nav__menu--second" id="closeMenu">
+        <img src="./build/svg/close.svg" class="nav__icon">
+    </a>
+
+
+    <ul class="dropdown" id="menu">
+
+        <li class="dropdown__list">
+            <a href="/" class="dropdown__link">
+                <img src="/build/svg/house.svg" class="dropdown__icon">
+                <span class="dropdown__span">Inicio</span>
+            </a>
+        </li>
+
+        <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+                <img src="/build/svg/school.svg" class="dropdown__icon">
+                <span class="dropdown__span">Instituto</span>
+                <img src="/build/svg/down.svg" class="dropdown__arrow">
+
+                <input type="checkbox" class="dropdown__check">
+            </a>
+
+            <div class="dropdown__content">
+
+                <ul class="dropdown__sub">
+
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">¿Quiénes somos?</a>
+                    </li>
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">Docentes</a>
+                    </li>
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">Agenda</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </li>
+
+        <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+                <img src="/build/svg/book.svg" class="dropdown__icon">
+                <span class="dropdown__span">Carreras</span>
+                <img src="/build/svg/down.svg" class="dropdown__arrow">
+
+                <input type="checkbox" class="dropdown__check">
+            </a>
+
+            <div class="dropdown__content">
+
+                <ul class="dropdown__sub">
+
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">Desarrollo de Software</a>
+                    </li>
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">Analisis de Sistemas</a>
+                    </li>
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">Inteligencía Artificial</a>
+                    </li>
+                  
+
+                </ul>
+
+            </div>
+        </li>
+
+        <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+                <img src="/build/svg/help.svg" class="dropdown__icon">
+                <span class="dropdown__span">Ayuda</span>
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+</nav>
+
 </header>
