@@ -1,0 +1,34 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.content-grid-aside {
+    display: grid;
+
+    @include m.tablet {
+        grid-template-columns: 2fr 1fr;
+    }
+    .aside {
+        margin: 4rem 0 0 0;
+        
+        
+
+        @include m.tablet {
+            max-width: 35rem;
+        }
+
+        .aside-box {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: v.$white-light;
+            border-radius: 1rem;
+            border: 1px v.$black;
+        
+            .aside-title {
+                font-size: 2.2rem;
+                text-align: center;
+                margin: 1rem 0;
+            }
+        }
+    }
+
+}

@@ -2,7 +2,7 @@
 @use './../base/mixins' as m;
 
 
-section {
+.section-home {
     .banner {
         position: relative;
         video {
@@ -45,22 +45,5 @@ section {
 
         }
 
-    }
-}
-
-main {
-
-    .entries {
-        h3 {
-            margin-top: 5rem;
-
-            @include m.tablet {
-                font-size: 3rem;
-            }
-
-            @include m.desktop {
-                font-size: 4rem;
-            }
-        }
     }
 }
