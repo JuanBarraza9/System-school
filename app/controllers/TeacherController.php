@@ -1,6 +1,6 @@
 <?php 
 
-namespace Controllers;
+namespace Controller;
 
 use MVC\Router;
 
@@ -11,7 +11,7 @@ class TeacherController {
 
         $router->render('auth/login', [
             'titulo' => 'Iniciar Sesión',
-            'user' => 'Maestro'
+            'user' => 'Docente'
         ]);
     }
 }

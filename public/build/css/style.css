@@ -97,6 +97,10 @@ p {
   text-align: center;
   text-transform: uppercase;
 }
+.login .content-login .btn-home {
+  display: block;
+  margin-top: 2rem;
+}
 .login .content-login h1 {
   text-transform: uppercase;
   color: brown;

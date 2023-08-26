@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 function debuguear($var) : string {
     echo "<pre>";
     var_dump($var);

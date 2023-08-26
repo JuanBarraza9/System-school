@@ -1,10 +1,11 @@
 <?php
 
-use Models\ActiveRecord;
+namespace App;
+use Model\ActiveRecord;
 
 require 'helpers.php';
-require_once __DIR__ . './../database/connect.php';
-require_once __DIR__ . './../vendor/autoload.php';
+require 'database.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // Conectarnos a la base de datos
 

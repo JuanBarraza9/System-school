@@ -47,6 +47,10 @@
     .content-login {
         text-align: center;
         text-transform: uppercase;
+        .btn-home {
+            display: block;
+            margin-top: 2rem;
+        }
         h1 {
             text-transform: uppercase;
             color: brown;

@@ -4,14 +4,17 @@
 
        <div class="logo-container">
        <picture>
-           <source srcset="/build/img/logo-not.webp" type="image/webp">
-           <img src="/build/img/logo-not.jpg" alt="image-instituto">
+           <source srcset="/build/img/ifts11.webp" type="image/webp">
+           <img src="/build/img/ifts11.jpeg" alt="image-instituto">
         </picture>
        </div>
 
     </div>
 
     <div class="content-login contenedor-sm">
+        <a href="/" class="btn-home">
+          <img src="/build/svg/house-black.svg">
+        </a>
 
         <h1>
            Bienvenido al sistema escolar
@@ -19,7 +22,11 @@
         <p class="instituto">Login de <?php echo $user ?? '';  ?></p>
         <p class="descripcion-pagina">Iniciar Sesión</p>
 
-        <form class="formulario" action="/" method="POST">
+        <form 
+            class="formulario" 
+            action="<?php echo ($user == 'Administrador') ? '/admin/login' : (($user == 'Docente') ? '/teacher/login/post' : '/student/login/post'); ?>"
+            method="POST"
+            >
             <?php if($user == 'Estudiante'){ ?>
 
                 <div class="campo">

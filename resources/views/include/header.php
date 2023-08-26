@@ -44,9 +44,6 @@
                         <a href="#" class="dropdown__anchor">¿Quiénes somos?</a>
                     </li>
                     <li class="dropdown__li">
-                        <a href="#" class="dropdown__anchor">Docentes</a>
-                    </li>
-                    <li class="dropdown__li">
                         <a href="#" class="dropdown__anchor">Agenda</a>
                     </li>
 
@@ -78,6 +75,57 @@
                         <a href="#" class="dropdown__anchor">Inteligencía Artificial</a>
                     </li>
                   
+
+                </ul>
+
+            </div>
+        </li>
+
+        <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+                <img src="/build/svg/teacher.svg" class="dropdown__icon">
+                <span class="dropdown__span">Docentes</span>
+                <img src="/build/svg/down.svg" class="dropdown__arrow">
+
+                <input type="checkbox" class="dropdown__check">
+            </a>
+
+            <div class="dropdown__content">
+
+                <ul class="dropdown__sub">
+
+                    <li class="dropdown__li">
+                        <a href="/teacher/login" class="dropdown__anchor">Iniciar Sesión</a>
+                    </li>
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">Listado</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </li>
+
+        <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+                <img src="/build/svg/user.svg" class="dropdown__icon">
+                <span class="dropdown__span">Alumnos</span>
+                <img src="/build/svg/down.svg" class="dropdown__arrow">
+
+                <input type="checkbox" class="dropdown__check">
+            </a>
+
+            <div class="dropdown__content">
+
+                <ul class="dropdown__sub">
+
+                    <li class="dropdown__li">
+                        <a href="/student/login" class="dropdown__anchor">Iniciar Sesión</a>
+                    </li>
+
+                    <li class="dropdown__li">
+                        <a href="#" class="dropdown__anchor">Recibidos</a>
+                    </li>
 
                 </ul>
 
