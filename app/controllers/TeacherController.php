@@ -10,6 +10,7 @@ class TeacherController {
     {
 
         $router->render('auth/login', [
+            'user' => 'Docente',
             'titulo' => 'Iniciar Sesión',
             'user' => 'Docente'
         ]);

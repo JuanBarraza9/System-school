@@ -459,3 +459,21 @@ p {
     font-size: 3rem;
   }
 }
+
+.alerta {
+  padding: 1rem;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 1rem;
+}
+.alerta.error {
+  background-color: #b91c1c;
+}
+.alerta.exito {
+  background-color: #15803d;
+}

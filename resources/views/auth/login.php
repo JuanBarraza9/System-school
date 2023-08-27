@@ -22,6 +22,10 @@
         <p class="instituto">Login de <?php echo $user ?? '';  ?></p>
         <p class="descripcion-pagina">Iniciar Sesión</p>
 
+        <?php 
+          include_once __DIR__ . "./../templates/alertas.php";
+        ?>
+
         <form 
             class="formulario" 
             action="<?php echo ($user == 'Administrador') ? '/admin/login' : (($user == 'Docente') ? '/teacher/login/post' : '/student/login/post'); ?>"
@@ -44,8 +48,8 @@
             <?php } ?>
 
             <div class="campo">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Tu Password">
+                <label for="contraseña">contraseña</label>
+                <input type="contraseña" id="contraseña" name="contraseña" placeholder="Tu contraseña">
             </div>
 
             <input type="submit" class="boton" value="Iniciar Sesión">

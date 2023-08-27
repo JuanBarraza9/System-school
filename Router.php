@@ -2,6 +2,8 @@
 
 namespace MVC;
 
+use function App\isAuth;
+
 class Router 
 {
     public array $getRoutes = [];
@@ -55,5 +57,25 @@ class Router
         include_once __DIR__ . '/resources/views/layout.php';
     }
 
+    public function renderAdmin($view, $datos = [])
+    {
+        // Leer los datos que se pasan a la vista
+        foreach ($datos as $key => $value) {
+            $$key = $value;  
+        }
+    
+        ob_start();
+    
+        // Incluir la vista en el diseño del panel de administración
+        include_once __DIR__ . "/resources/views/auth/admin/$view.php";
+        $contenido = ob_get_clean(); //  detiene el almacenamiento en el buffer y recupera su contenido
+        
+        if(!isset($_SESSION['login'])) {
+            header('Location: /');
+        } else {
+            include_once __DIR__ . '/resources/views/auth/layout-auth.php';
+        }
+        
+    }
 
 }

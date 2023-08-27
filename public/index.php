@@ -20,7 +20,10 @@ $router->get('/teacher/login', [TeacherController::class, 'login']);
 
 $router->get('/admin/login', [AdminController::class, 'login']);
 $router->post('/admin/login', [AdminController::class, 'login']);
+$router->get('/admin/logout', [AdminController::class, 'logout']);
 
-// auth panel
+// AREA PRIVADA
+$router->get('/admin/dashboard', [AdminController::class, 'index']);
+
 
 $router->checkRoutes();
