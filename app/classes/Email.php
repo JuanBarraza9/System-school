@@ -25,8 +25,8 @@ class Email {
          $mail->Host = 'sandbox.smtp.mailtrap.io';
          $mail->SMTPAuth = true;
          $mail->Port = 2525;
-         $mail->Username = 'fde5aaddfd1c65';
-         $mail->Password = '211e65f9d748b6';
+         $mail->Username = '';
+         $mail->Password = '';
      
          $mail->setFrom('usuarios@ifts11.com');
          $mail->addAddress('usuarios@ifts11.com', 'Ifts11.com');
@@ -56,8 +56,8 @@ class Email {
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = 'fde5aaddfd1c65';
-        $mail->Password = '211e65f9d748b6';
+        $mail->Username = '';
+        $mail->Password = '';
     
         $mail->setFrom('usuarios@ifts11.com');
         $mail->addAddress('usuarios@ifts11.com', 'Ifts11.com');
