@@ -2,8 +2,6 @@
 
 namespace Model;
 
-use function App\debuguear;
-
 class Admin extends ActiveRecord {
     // Base DE DATOS
     protected static $tabla = 'Administrador';

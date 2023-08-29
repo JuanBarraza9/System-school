@@ -1,6 +1,3 @@
-<?php   
-  include 'include/header.php'
-?>
 
 <section class="section-home">
    <div class="banner">
@@ -19,8 +16,3 @@
       include 'include/aside.php';
     ?>
 </main>
-
-
-<?php   
-  include 'include/footer.php';
-?>

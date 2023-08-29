@@ -1,7 +1,5 @@
 <?php
 
-namespace App;
-
 $db = mysqli_connect('localhost', 'juancito', '0909', 'system_school');
 
 

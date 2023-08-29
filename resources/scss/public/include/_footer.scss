@@ -1,7 +1,9 @@
 @use '../../base/variables' as v;
 @use '../../base/mixins' as m;
 
+
 .footer {
+    width: 100%;
     background-color: v.$black;
 
     .footer-content {
@@ -10,6 +12,7 @@
         .footer-title {
             text-align: center;
             h2 {
+                margin-top: 0;
                 padding-top: 3rem;
 
                 @include m.tablet {

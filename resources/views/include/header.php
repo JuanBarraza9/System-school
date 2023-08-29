@@ -14,7 +14,7 @@
     </a>
     
     <a href="javascript:void(0)" class="nav__menu nav__menu--second" id="closeMenu">
-        <img src="./build/svg/close.svg" class="nav__icon">
+        <img src="/build/svg/close.svg" class="nav__icon">
     </a>
 
 
@@ -121,6 +121,10 @@
 
                     <li class="dropdown__li">
                         <a href="/student/login" class="dropdown__anchor">Iniciar Sesión</a>
+                    </li>
+
+                    <li class="dropdown__li">
+                        <a href="/student/register" class="dropdown__anchor">Registro</a>
                     </li>
 
                     <li class="dropdown__li">

@@ -1,7 +1,5 @@
 <?php
 
-namespace App;
-
 function debuguear($var) : string {
     echo "<pre>";
     var_dump($var);
@@ -10,9 +8,9 @@ function debuguear($var) : string {
 }
 
 // Escapa / Sanitizar el HTML
-function s($html) : string {
-    $s = htmlspecialchars($html);
-    return $s;
+function san($html) : string {
+    $san = htmlspecialchars($html);
+    return $san;
 }
 
 // Función que revisa que el usuario este autenticado

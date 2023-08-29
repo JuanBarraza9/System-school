@@ -16,9 +16,9 @@
           <img src="/build/svg/house-black.svg">
         </a>
 
-        <h1>
+        <h2>
            Bienvenido al sistema escolar
-        </h1>
+        </h2>
         <p class="instituto">Login de <?php echo $user ?? '';  ?></p>
         <p class="descripcion-pagina">Iniciar Sesión</p>
 
@@ -57,7 +57,9 @@
 
         <div class="acciones">
             <a href="olvide">¿Olvidaste tu Password?</a>
+            <?php echo ($user == 'Estudiante') ? '<a href="/student/register">Registrarse</a>' : ""; ?>
         </div>
+        
 
     </div> <!-- contenedor sm -->
 </div>

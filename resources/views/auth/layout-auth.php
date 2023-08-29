@@ -30,8 +30,8 @@
   <div class="wrapper">
     
     <?php 
-        include 'include/header.php';
-        include 'include/aside.php';
+        include 'include/navbar.php';
+        include 'include/sidebar.php';
         ?>
    
     <?php echo $contenido; ?>

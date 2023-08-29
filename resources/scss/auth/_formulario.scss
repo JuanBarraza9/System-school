@@ -1,5 +1,6 @@
 @use './../base/mixins' as m;
 
+
 .formulario {
 
     background-color: #e2e8f0;
@@ -44,6 +45,8 @@
 }
 
 .acciones {
+    display: flex;
+    justify-content: space-around;
     margin-top: 3rem;
     a {
         padding-bottom: 3rem;
@@ -52,3 +55,38 @@
         color: #475569;
     }
 }
+
+.register {
+
+    .content-register {
+        text-align: center;
+        text-transform: uppercase;
+        .btn-home {
+            display: block;
+            margin-top: 10rem;
+        }
+        h2 {
+            text-transform: uppercase;
+            color: brown;
+        }
+        .instituto {
+            line-height: 1.5;
+            font-size: 2rem;
+        }
+
+
+        .formulario-register {
+
+            @include m.tablet {
+                max-width: 100rem;
+        
+                .campos-flex {
+                    display: flex;
+                }
+            }
+        }
+
+    }
+
+}
+
