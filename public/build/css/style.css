@@ -16,7 +16,7 @@ body {
 
 .contenedor {
   width: 90%;
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
@@ -26,25 +26,26 @@ body {
   margin: 0 auto;
 }
 
-.btn-center-md {
+.div-btn {
   display: flex;
   justify-content: center;
-  max-width: 16rem;
-  margin: 0 auto;
 }
 
-.btn {
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  background-color: #3b82f6;
-  padding: 1rem 2rem;
+.boton {
+  margin-top: 1.6rem;
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.6rem;
   border-radius: 1rem;
+  background-color: #7dd3fc;
+  border: black 1px;
+  transition: all ease 300ms;
+  color: #475569;
 }
-.btn:hover {
-  background-color: #1d4ed8;
+.boton:hover {
+  cursor: pointer;
+  background-color: #0369a1;
+  color: white;
 }
 
 .btn-margin {
@@ -113,7 +114,7 @@ p {
 }
 
 /** Media Queries **/
-.login .background-login {
+.formulario-general .background-form {
   position: relative;
   background-image: url("./../../build/img/student-849822_1280.webp");
   background-size: cover;
@@ -123,7 +124,19 @@ p {
   align-items: center;
   justify-content: center;
 }
-.login .background-login:before {
+@media (min-width: 768px) {
+  .formulario-general .background-form {
+    width: 50%;
+    min-height: 100vh;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .formulario-general .background-form {
+    width: 70%;
+  }
+}
+.formulario-general .background-form:before {
   content: "";
   position: absolute;
   top: 0;
@@ -132,126 +145,86 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.login .background-login .logo-container {
+.formulario-general .background-form .logo-container {
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.login .background-login .logo-container picture {
+.formulario-general .background-form .logo-container picture {
   display: block;
   width: 100%;
   max-width: 35rem;
 }
-.login .background-login .logo-container picture img {
+.formulario-general .background-form .logo-container picture img {
   max-width: 100%;
   height: auto;
 }
-.login .content-login {
+.formulario-general .content-form-father {
   text-align: center;
   text-transform: uppercase;
+  padding-top: 3rem;
 }
-.login .content-login .btn-home {
+.formulario-general .content-form-father .btn-home {
   display: block;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
-.login .content-login h2 {
+.formulario-general .content-form-father h2 {
   text-transform: uppercase;
   color: brown;
 }
-.login .content-login .instituto {
+.formulario-general .content-form-father .instituto {
   line-height: 1.5;
   font-size: 2rem;
 }
-@media (min-width: 768px) {
-  .login {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .login .background-login {
-    width: 50%;
-    min-height: 100vh;
-    height: 100%;
-  }
-  .login .content-login {
-    padding: 4rem;
-  }
-}
-
-.formulario {
+.formulario-general .formulario {
   background-color: #e2e8f0;
   padding: 2rem;
   border-radius: 2rem;
-  max-width: 45rem;
+  width: 100%;
+  max-width: 70rem;
   margin: 0 auto;
 }
-.formulario .campo {
+.formulario-general .formulario .campo {
   font-size: 1.4rem;
   display: block;
   padding: 1rem;
   width: 100%;
 }
-.formulario .campo label {
+.formulario-general .formulario .campo label {
   display: flex;
   justify-content: flex-start;
   padding-bottom: 0.4rem;
 }
-.formulario .campo input {
+.formulario-general .formulario .campo input {
   padding: 1rem;
   width: 100%;
   border: none;
   border-radius: 1rem;
 }
-.formulario .boton {
-  margin-top: 1.6rem;
-  width: 15rem;
-  padding: 0.6rem;
-  border-radius: 1rem;
-  background-color: #7dd3fc;
-  border: black 1px;
-  transition: all ease 300ms;
-  color: #475569;
-}
-.formulario .boton:hover {
-  cursor: pointer;
-  background-color: #0369a1;
-  color: white;
-}
-
-.acciones {
+.formulario-general .acciones {
   display: flex;
   justify-content: space-around;
   margin-top: 3rem;
 }
-.acciones a {
+.formulario-general .acciones a {
   padding-bottom: 3rem;
   font-size: 1.5rem;
   text-transform: capitalize;
   color: #475569;
 }
-
-.register .content-register {
-  text-align: center;
-  text-transform: uppercase;
-}
-.register .content-register .btn-home {
-  display: block;
-  margin-top: 10rem;
-}
-.register .content-register h2 {
-  text-transform: uppercase;
-  color: brown;
-}
-.register .content-register .instituto {
-  line-height: 1.5;
-  font-size: 2rem;
+@media (min-width: 768px) {
+  .formulario-general {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 @media (min-width: 768px) {
-  .register .content-register .formulario-register {
+  .formulario-general .register .formulario-register {
     max-width: 100rem;
   }
-  .register .content-register .formulario-register .campos-flex {
+  .formulario-general .register .formulario-register .campos-flex {
     display: flex;
   }
 }

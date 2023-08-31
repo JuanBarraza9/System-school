@@ -10,11 +10,57 @@ class StudentController {
 
     public static function login(Router $router)
     {
+        $alertas = [];
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // autenticar
+            $alumno = new Alumno($_POST);
+            $alertas = $alumno->validarLogin();
+
+            if(empty($alertas)) {
+                // Comprobar que exista el usuario
+                $usuario = Alumno::where('email', $alumno->email);
+                
+                if($usuario) {
+                    if($usuario->comprobarPasswordAndVerificado($alumno->password)){
+                        // Autenticar el usuario
+                        session_start();
+
+                        // Configura el tiempo de expiración en segundos (por ejemplo, 30 minutos)
+                        $tiempoExpiracion = 7200; // 1 hora
+                        session_set_cookie_params($tiempoExpiracion);
+                        session_cache_expire($tiempoExpiracion);
+                        session_set_cookie_params($tiempoExpiracion);
+                        
+                        // Establece el tiempo de vida de la sesión en segundos
+                        ini_set('session.gc_maxlifetime', $tiempoExpiracion);
+
+                        $_SESSION['cod_Alumno'] = $usuario->cod_Alumno;
+                        $_SESSION['email'] = $usuario->email;
+                        $_SESSION['nombre'] = $usuario->nombre;
+                        $_SESSION['login'] = true;
+
+                        // Redireccionamiento
+                        header('Location: /student/dashboard');
+
+                        
+                    } else {
+                        Alumno::setAlerta('error', 'Contrseña incorrecta');
+                    }
+                    
+                } else {
+                    Alumno::setAlerta('error', 'El Usuario no existe!');
+                }
+
+            }
+        }
+
+        $alertas = Alumno::getAlertas();
 
         $router->render('/auth/login', [
             'user' => 'Estudiante',
             'titulo' => 'Iniciar Sesión',
-            'user' => 'Estudiante'
+            'alertas' => $alertas
         ]);
     }
 
@@ -99,4 +145,107 @@ class StudentController {
             'alertas' => $alertas
         ]);
     }
+
+    public static function forget(Router $router) {
+        
+        $alertas = [];
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $alumno = new Alumno($_POST);
+            $alertas = $alumno->validarEmail();
+
+            if(empty($alertas)) {
+                 $usuario = Alumno::where('email', $alumno->email);
+
+                 if($usuario && $usuario->confirmado === "1") {
+                        
+                    // Generar un token
+                    $usuario->crearToken();
+                    $usuario->guardarAlumno();
+
+                    //  Enviar el email
+                    $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
+                    $email->enviarInstrucciones();
+
+                    // Alerta de exito
+                    Alumno::setAlerta('exito', 'Revisa tu email');
+                 } else {
+                    Alumno::setAlerta('error', 'El Usuario no existe o no está confirmado');
+                     
+                 }
+            } 
+        }
+
+        $alertas = Alumno::getAlertas();
+
+        $router->render('auth/student/forget-password', [
+            'user' => 'Estudiante',
+            'titulo' => 'Recuperar contrseña',
+            'alertas' => $alertas
+        ]);
+        
+    }
+
+    public static function recover(Router $router) {
+
+        $alertas = [];
+        $error = false;
+
+        $token = san($_GET['token']);
+
+        // Buscar usuario por su token
+        $usuario = Alumno::where('token', $token);
+
+        if(empty($usuario)) {
+            Alumno::setAlerta('error', 'Token No Válido');
+            $error = true;
+        }
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Leer el nuevo password y guardarlo
+            $password = new Alumno($_POST);
+            $alertas = $password->validarPasswordRecovery();
+
+            if(empty($alertas)) {
+                $usuario->password = null;
+
+                $usuario->password = $password->password;
+                $usuario->hashPassword();
+                $usuario->token = null;
+
+                $resultado = $usuario->guardarAlumno();
+                if($resultado) {
+                    header('Location: /');
+                }
+            }
+        }
+
+        $alertas = Alumno::getAlertas();
+
+        $router->render('auth/student/recover', [
+            'user' => 'Estudiante',
+            'titulo' => 'Nueva contraseña',
+            'alertas' => $alertas,
+            'error' => $error
+        ]);
+    }
+
+    // AREA PRIVADA METHODS
+    public static function index(Router $router) {
+        session_start();
+        
+
+        $router->renderAuth('student/dashboard', [
+            'user' => 'student',
+            'nombre' => $_SESSION['nombre'],
+        ]);
+    }
+
+    public static function logout() {
+        session_start();
+        $_SESSION = [];
+        header('Location: /');
+    }
+
+
 }

@@ -15,7 +15,7 @@ body {
 }
 .contenedor {
     width: 90%;
-    max-width: 1200px;
+    max-width: 120rem;
     margin: 0 auto;
 }
 .contenedor-sm {
@@ -24,24 +24,27 @@ body {
     margin: 0 auto;
 }
 
-.btn-center-md {
+// boton
+
+.div-btn {
     display: flex;
     justify-content: center;
-    max-width: 16rem;
-    margin: 0 auto;
 }
 
-.btn {
-    text-transform: uppercase;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    color: v.$white;
-    background-color: v.$blue;
-    padding: 1rem 2rem;
+.boton {
+    margin-top: 1.6rem;
+    width: 100%;
+    max-width: 30rem;
+    padding: .6rem;
     border-radius: 1rem;
+    background-color: #7dd3fc;
+    border: black 1px;
+    transition: all ease 300ms;
+    color: #475569;
     &:hover {
-        background-color: v.$blue-700;
+        cursor: pointer;
+        background-color: #0369a1;
+        color: white;
     }
 }
 

@@ -1,3 +1,8 @@
+<?php 
+     $url = ($user === 'admin') ? '/admin/logout' : (($user === 'teacher') ? '/teacher/logout' : 
+     (($user === 'student') ? '/student/logout' : ''));
+
+?>
 <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -64,7 +69,7 @@
             <span class="float-right text-muted text-sm">Edit / View</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="/admin/logout" class="dropdown-item">
+          <a href="<?php echo $url ?>" class="dropdown-item">
             <i class="fas fa-sign-out-alt mr-2"></i> Cerrar sesión
             <span class="float-right text-muted text-sm">Good bye</span>
           </a>

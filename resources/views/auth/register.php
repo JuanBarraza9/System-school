@@ -1,19 +1,19 @@
-<div class="register">
+<div class="formulario-general">
+    <div class="contenedor register">
 
-    <div class="content-register contenedor">
-        <a href="/" class="btn-home">
-          <img src="/build/svg/house-black.svg">
-        </a>
+        <div class="content-form-father">
+            <a href="/" class="btn-home">
+              <img src="/build/svg/house-black.svg">
+            </a>
+    
+            <h2>
+               Bienvenido al sistema escolar
+            </h2>
+            <p class="instituto">Registro de <?php echo $user ?? '';  ?></p>
+            <p class="descripcion-pagina">Al registrarte deberás confirmar tu email</p>
 
-        <h2>
-           Bienvenido al sistema escolar
-        </h2>
-        <p class="instituto">Registro de <?php echo $user ?? '';  ?></p>
-        <p class="descripcion-pagina">Al registrarte deberás confirmar tu email</p>
-
-        <?php 
-          include_once __DIR__ . "./../templates/alertas.php";
-        ?>
+            <?php include_once __DIR__ . "./../templates/alertas.php"; ?>
+        </div>
 
         <form 
             class="formulario formulario-register" 
@@ -23,49 +23,52 @@
 
             <div class="campos-flex">
                 <div class="campo">
-                    <label for="nombre">nombre</label>
+                    <label for="nombre">Nombre*</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" value="<?php echo san($usuario->nombre); ?>">
                 </div>
     
                 <div class="campo">
-                    <label for="apellido">apellido</label>
+                    <label for="apellido">Apellido*</label>
                     <input type="text" id="apellido" name="apellido" placeholder="Tu Apellido" value="<?php echo san($usuario->apellido); ?>">
                 </div>
             </div>
 
             <div class="campo">
-                <label for="documento">Documento</label>
+                <label for="documento">Documento*</label>
                 <input type="text" id="documento" name="documento" placeholder="Tu Documento" value="<?php echo san($usuario->documento); ?>">
             </div>
 
             <div class="campo">
-                <label for="direccion">Dirección</label>
+                <label for="direccion">Dirección*</label>
                 <input type="text" id="direccion" name="direccion" placeholder="Tu Direccion" value="<?php echo san($usuario->direccion); ?>">
             </div>
 
             <div class="campo">
-                <label for="telefono">Teléfono</label>
+                <label for="telefono">Teléfono*</label>
                 <input type="text" id="telefono" name="telefono" placeholder="Tu Telefono" value="<?php echo san($usuario->telefono); ?>">
             </div>
             
             <div class="campo">
-                <label for="email">Email</label>
+                <label for="email">Email*</label>
                 <input type="email" id="email" name="email" placeholder="Tu Email" value="<?php echo san($usuario->email); ?>">
             </div>
 
             <div class="campos-flex">
                 <div class="campo">
-                    <label for="password">password</label>
+                    <label for="password">Password*</label>
                     <input type="password" id="password" name="password" placeholder="Tu Password">
                 </div>
                 
                 <div class="campo">
-                    <label for="confirm_password">Confirmar Contraseña</label>
+                    <label for="confirm_password">Confirmar Password*</label>
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirma el Password">
                 </div>
             </div>
             
-            <input type="submit" class="boton" value="Registrarse">
+            <div class="div-btn">
+               <input type="submit" class="boton" value="Registrarse">
+            </div>
+
         </form>
 
         <div class="acciones">
@@ -74,5 +77,5 @@
         </div>
         
 
-    </div> <!-- contenedor sm -->
+    </div> <!-- contenedor -->
 </div>

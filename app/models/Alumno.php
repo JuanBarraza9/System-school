@@ -16,6 +16,7 @@ class Alumno extends ActiveRecord {
     public $email;
     public $password;
     public $confirm_password;
+    public $repeat_password;
     public $confirmado;
     public $token;
 
@@ -28,6 +29,7 @@ class Alumno extends ActiveRecord {
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->confirm_password = $args['confirm_password'] ?? '';
+        $this->repeat_password = $args['repeat_password'] ?? '';
         $this->confirmado = $args['confirmado'] ?? 0;
         $this->token = trim($args['token'] ?? '');
     }
@@ -63,8 +65,6 @@ class Alumno extends ActiveRecord {
         }
 
 
-
-
         return self::$alertas;
     }
 
@@ -91,6 +91,23 @@ class Alumno extends ActiveRecord {
         }
         if(strlen($this->password) < 6) {
             self::$alertas['error'][] = 'El Password debe tener al menos 6 caracteres';
+        }
+
+        return self::$alertas;
+    }
+
+    public function validarPasswordRecovery() {
+        if(!$this->password) {
+            self::$alertas['error'][] = 'El Password es obligatorio';
+        }
+        if(strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'El Password debe tener al menos 6 caracteres';
+        }
+        if(!$this->repeat_password) {
+            self::$alertas['error'][] = 'Se require confirmar el Password';
+        }
+        if($this->repeat_password !== $this->password) {
+            self::$alertas['error'][] = 'Los password no coinciden!';
         }
 
         return self::$alertas;

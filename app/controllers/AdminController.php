@@ -37,7 +37,7 @@ class AdminController {
                         // Establece el tiempo de vida de la sesión en segundos
                         ini_set('session.gc_maxlifetime', $tiempoExpiracion);
 
-                        $_SESSION['codAdmin'] = $usuario->codAdmin;
+                        $_SESSION['cod_Admin'] = $usuario->cod_Admin;
                         $_SESSION['username'] = $usuario->username;
                         $_SESSION['login'] = true;
 
@@ -76,7 +76,8 @@ class AdminController {
     public static function index(Router $router) {
         session_start();
         
-        $router->renderAdmin('dashboard', [
+        $router->renderAuth('admin/dashboard', [
+            'user' => 'Admin',
             'username' => $_SESSION['username'],
         ]);
     }
